@@ -1,0 +1,1753 @@
+```html
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>Elementos de Derecho Comercial - Comisión 8812</title>
+
+<style>
+
+/* =========================================================
+   CONFIGURACIÓN GENERAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    background: #000;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+    background: #000;
+    color: #e5e7eb;
+
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ENCABEZADO
+   ========================================================= */
+
+header {
+
+    background: #000;
+
+    color: white;
+
+    padding: 28px 18px 24px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #222;
+}
+
+header h1 {
+
+    margin: 0;
+
+    font-size: 26px;
+
+    line-height: 1.25;
+}
+
+header p {
+
+    margin: 8px 0 0;
+
+    color: #a1a1aa;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   CONTENEDOR
+   ========================================================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 900px;
+
+    margin: auto;
+
+    padding: 18px;
+}
+
+
+/* =========================================================
+   CONTADOR
+   ========================================================= */
+
+.contador {
+
+    background: #0b0b0b;
+
+    border: 1px solid #262626;
+
+    border-radius: 14px;
+
+    padding: 23px 18px;
+
+    margin-bottom: 20px;
+
+    text-align: center;
+
+    box-shadow: 0 4px 18px rgba(0,0,0,0.5);
+}
+
+.contador h2 {
+
+    margin: 0 0 14px;
+
+    font-size: 21px;
+
+    color: #f5f5f5;
+}
+
+#countdown {
+
+    font-size: 27px;
+
+    font-weight: bold;
+
+    color: #ef4444;
+
+    letter-spacing: 0.3px;
+}
+
+.parcial-info {
+
+    margin-top: 11px;
+
+    font-size: 14px;
+
+    color: #a1a1aa;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   INFORMACIÓN DE LA MATERIA
+   ========================================================= */
+
+.info {
+
+    background: #0b0b0b;
+
+    border: 1px solid #262626;
+
+    padding: 17px;
+
+    border-radius: 12px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 3px 14px rgba(0,0,0,0.45);
+}
+
+.info p {
+
+    margin: 7px 0;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+
+    color: #d4d4d8;
+}
+
+.info strong {
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   MESES
+   ========================================================= */
+
+.mes {
+
+    margin-bottom: 30px;
+}
+
+.mes h2 {
+
+    background: #171717;
+
+    color: #fff;
+
+    padding: 12px 15px;
+
+    border-radius: 9px;
+
+    font-size: 18px;
+
+    margin: 0 0 10px;
+
+    border-left: 4px solid #404040;
+}
+
+
+/* =========================================================
+   CLASES
+   ========================================================= */
+
+.clase {
+
+    background: #0b0b0b;
+
+    border: 1px solid #242424;
+
+    border-radius: 10px;
+
+    padding: 14px 15px;
+
+    margin-bottom: 8px;
+
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 11px;
+
+    box-shadow: 0 2px 9px rgba(0,0,0,0.45);
+
+    transition: 0.2s;
+}
+
+.clase:hover {
+
+    border-color: #3f3f46;
+}
+
+
+/* =========================================================
+   TILDE
+   ========================================================= */
+
+.check {
+
+    font-size: 20px;
+
+    min-width: 25px;
+
+    width: 25px;
+
+    font-weight: bold;
+
+    color: #52525b;
+
+    text-align: center;
+
+    line-height: 1.3;
+}
+
+
+/* =========================================================
+   CONTENIDO DE CLASE
+   ========================================================= */
+
+.contenido {
+
+    flex: 1;
+
+    min-width: 0;
+}
+
+.fecha {
+
+    font-weight: bold;
+
+    color: #e5e7eb;
+
+    margin-bottom: 4px;
+
+    line-height: 1.35;
+}
+
+.tema {
+
+    color: #a1a1aa;
+
+    line-height: 1.45;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CLASE YA REALIZADA
+   ========================================================= */
+
+.clase.realizada {
+
+    opacity: 0.72;
+}
+
+.clase.realizada .fecha {
+
+    color: #a1a1aa;
+}
+
+.clase.realizada .check {
+
+    color: #22c55e;
+}
+
+
+/* =========================================================
+   PARCIAL
+   ========================================================= */
+
+.parcial {
+
+    border: 1px solid #7f1d1d;
+
+    background: #120707;
+}
+
+.parcial .fecha {
+
+    color: #ef4444;
+}
+
+.parcial .check {
+
+    color: #ef4444;
+}
+
+
+/* =========================================================
+   RECUPERATORIO
+   ========================================================= */
+
+.recuperatorio {
+
+    border: 1px solid #78350f;
+
+    background: #100b05;
+}
+
+.recuperatorio .fecha {
+
+    color: #f59e0b;
+}
+
+.recuperatorio .check {
+
+    color: #f59e0b;
+}
+
+
+/* =========================================================
+   PIE DE PÁGINA
+   ========================================================= */
+
+footer {
+
+    text-align: center;
+
+    padding: 35px 18px 40px;
+
+    color: #71717a;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+
+    border-top: 1px solid #1f1f1f;
+
+    margin-top: 15px;
+}
+
+footer .aclaracion {
+
+    max-width: 700px;
+
+    margin: 0 auto 12px;
+}
+
+footer .copyright {
+
+    color: #52525b;
+}
+
+
+/* =========================================================
+   CELULARES
+   ========================================================= */
+
+@media (max-width: 600px) {
+
+    header {
+
+        padding: 24px 14px 20px;
+    }
+
+    header h1 {
+
+        font-size: 21px;
+    }
+
+    header p {
+
+        font-size: 13px;
+    }
+
+    .container {
+
+        padding: 12px;
+    }
+
+    .contador {
+
+        padding: 20px 13px;
+    }
+
+    .contador h2 {
+
+        font-size: 19px;
+    }
+
+    #countdown {
+
+        font-size: 21px;
+
+        line-height: 1.5;
+    }
+
+    .parcial-info {
+
+        font-size: 13px;
+    }
+
+    .info {
+
+        padding: 15px;
+    }
+
+    .mes h2 {
+
+        font-size: 17px;
+    }
+
+    .clase {
+
+        padding: 13px 11px;
+
+        gap: 8px;
+    }
+
+    .check {
+
+        min-width: 23px;
+
+        width: 23px;
+
+        font-size: 18px;
+    }
+
+    .fecha {
+
+        font-size: 14px;
+    }
+
+    .tema {
+
+        font-size: 13px;
+    }
+
+}
+
+
+/* =========================================================
+   PANTALLAS MUY PEQUEÑAS
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+    header h1 {
+
+        font-size: 19px;
+    }
+
+    #countdown {
+
+        font-size: 19px;
+    }
+
+    .clase {
+
+        padding: 12px 9px;
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- ========================================================
+     ENCABEZADO
+     ======================================================== -->
+
+<header>
+
+    <h1>
+        Elementos de Derecho Comercial
+    </h1>
+
+    <p>
+        Comisión 8812 · Cátedra Dr. Alfredo Rovira
+    </p>
+
+    <p>
+        Horario: martes, miércoles y viernes · 20:00 a 21:30
+    </p>
+
+</header>
+
+
+
+<div class="container">
+
+
+<!-- ========================================================
+     CONTADOR DEL PRIMER PARCIAL
+     ======================================================== -->
+
+<div class="contador">
+
+    <h2>
+        ⏳ Primer Parcial
+    </h2>
+
+    <div id="countdown">
+        Cargando...
+    </div>
+
+    <div class="parcial-info">
+        Martes 13 de octubre de 2026 · 20:00 hs · PRESENCIAL
+    </div>
+
+</div>
+
+
+
+<!-- ========================================================
+     INFORMACIÓN
+     ======================================================== -->
+
+<div class="info">
+
+    <p>
+        <strong>Profesor titular:</strong>
+        Dr. Alfredo Rovira
+    </p>
+
+    <p>
+        <strong>Jefe de Trabajo Práctico:</strong>
+        Dr. Fabián Rey
+    </p>
+
+    <p>
+        <strong>Materia:</strong>
+        Elementos de Derecho Comercial
+    </p>
+
+    <p>
+        <strong>Comisión:</strong>
+        8812
+    </p>
+
+    <p>
+        <strong>Horario:</strong>
+        Martes, miércoles y viernes de 20:00 a 21:30
+    </p>
+
+</div>
+
+
+
+<!-- ========================================================
+     AGOSTO
+     ======================================================== -->
+
+<section class="mes">
+
+<h2>AGOSTO</h2>
+
+
+<div class="clase" data-date="2026-08-12">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 12 de agosto
+        </div>
+
+        <div class="tema">
+            Presentación de la materia - Evolución del derecho comercial
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-08-14">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 14 de agosto
+        </div>
+
+        <div class="tema">
+            Elementos del derecho comercial incorporados al CCCN
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-08-18">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 18 de agosto
+        </div>
+
+        <div class="tema">
+            Persona jurídica CCCN
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-08-19">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 19 de agosto
+        </div>
+
+        <div class="tema">
+            Inoponibilidad de la persona jurídica
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-08-21">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 21 de agosto
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 1 — Análisis de la película La Lavandería
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-08-25">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 25 de agosto
+        </div>
+
+        <div class="tema">
+            Introducción a las sociedades — Concepto — Características
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-08-26">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 26 de agosto
+        </div>
+
+        <div class="tema">
+            Sociedades — Elementos — Objeto social — Affectio societatis — Ley 19.550
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-08-28">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 28 de agosto
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 2 — Análisis de la película Wall Street
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     SEPTIEMBRE
+     ======================================================== -->
+
+<section class="mes">
+
+<h2>SEPTIEMBRE</h2>
+
+
+<div class="clase" data-date="2026-09-01">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 1 de septiembre
+        </div>
+
+        <div class="tema">
+            Contratos paritarios, de adhesión, de consumo
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-02">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 2 de septiembre
+        </div>
+
+        <div class="tema">
+            Contratos paritarios, de adhesión, de consumo — continuación
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-04">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 4 de septiembre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 3 — Principales características contratos PAC
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-08">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 8 de septiembre
+        </div>
+
+        <div class="tema">
+            Ley 24.240 — Ley de Defensa al Consumidor
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-09">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 9 de septiembre
+        </div>
+
+        <div class="tema">
+            Contratos bancarios
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-11">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 11 de septiembre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 4 — Derechos del consumidor en Ley 24.240
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-15">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 15 de septiembre
+        </div>
+
+        <div class="tema">
+            Contratos asociativos
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-16">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 16 de septiembre
+        </div>
+
+        <div class="tema">
+            Ley 25.065 — Ley de Tarjeta de Crédito
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-18">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 18 de septiembre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 5 — Derechos del consumidor en C.B. y T.C.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-22">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 22 de septiembre
+        </div>
+
+        <div class="tema">
+            Ley de fondo de comercio 11.687
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-23">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 23 de septiembre
+        </div>
+
+        <div class="tema">
+            Agencia, concesión y franquicia
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-25">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 25 de septiembre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 6 — Análisis fallo transferencia fondo comercio
+        </div>
+
+    </div>
+
+</div>
+
+
+</section>
+
+
+
+<!-- ========================================================
+     OCTUBRE
+     ======================================================== -->
+
+<section class="mes">
+
+<h2>OCTUBRE</h2>
+
+
+<div class="clase" data-date="2026-09-29">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 29 de septiembre
+        </div>
+
+        <div class="tema">
+            Derechos de propiedad intelectual — marcas, patentes, modelos
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-09-30">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 30 de septiembre
+        </div>
+
+        <div class="tema">
+            Ley de marcas 22.362
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-02">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 2 de octubre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 7 — Cuadro de Derechos de propiedad intelectual
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-06">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 6 de octubre
+        </div>
+
+        <div class="tema">
+            Títulos valores — Características cambiarias
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-07">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 7 de octubre
+        </div>
+
+        <div class="tema">
+            Títulos valores en el CCCN
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-09">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 9 de octubre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 8 — Títulos valores en el CCCN
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PRIMER PARCIAL -->
+
+<div class="clase parcial" data-date="2026-10-13">
+
+    <div class="check">
+        📝
+    </div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 13 de octubre — PRIMER PARCIAL
+        </div>
+
+        <div class="tema">
+            PRESENCIAL
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-14">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 14 de octubre
+        </div>
+
+        <div class="tema">
+            Introducción a la segunda parte del curso — Sociedades – Concursos
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-16">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 16 de octubre
+        </div>
+
+        <div class="tema">
+            Entrega de notas, análisis y conclusiones de la primera parte del curso
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-20">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 20 de octubre
+        </div>
+
+        <div class="tema">
+            Sociedades — Elementos del contrato social
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-21">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 21 de octubre
+        </div>
+
+        <div class="tema">
+            Sociedades — Affectio societatis — Objeto social — Capacidad
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- RECUPERATORIO -->
+
+<div class="clase recuperatorio" data-date="2026-10-23">
+
+    <div class="check">
+        ↩️
+    </div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 23 de octubre — Recuperatorio del primer examen parcial
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-27">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 27 de octubre
+        </div>
+
+        <div class="tema">
+            Sociedades — Intervención Judicial
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-28">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 28 de octubre
+        </div>
+
+        <div class="tema">
+            Sociedades — Contabilidad — Estados contables
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-10-30">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 30 de octubre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 9 — Affectio societatis
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     NOVIEMBRE
+     ======================================================== -->
+
+<section class="mes">
+
+<h2>NOVIEMBRE</h2>
+
+
+<div class="clase" data-date="2026-11-03">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 3 de noviembre
+        </div>
+
+        <div class="tema">
+            Sociedades — Sociedades Extranjeras
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-04">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 4 de noviembre
+        </div>
+
+        <div class="tema">
+            Sociedades — Sociedad Responsabilidad Limitada, características
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-06">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 6 de noviembre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 10 — Análisis contrato social S.R.L.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-10">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 10 de noviembre
+        </div>
+
+        <div class="tema">
+            Sociedades — Sociedad anónima, características
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-11">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 11 de noviembre
+        </div>
+
+        <div class="tema">
+            Sociedades — Órganos: directorio, asamblea, fiscalización
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-13">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 13 de noviembre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 11 — Análisis estatuto social S.A.
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-17">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 17 de noviembre
+        </div>
+
+        <div class="tema">
+            Concursos — Requisitos — Apertura
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-18">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 18 de noviembre
+        </div>
+
+        <div class="tema">
+            Concursos — Efectos del concurso
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-20">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 20 de noviembre
+        </div>
+
+        <div class="tema">
+            Trabajo práctico N.º 12 — Análisis concurso Página PJN
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-24">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Martes 24 de noviembre
+        </div>
+
+        <div class="tema">
+            Concursos — Proceso de verificación de créditos
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="clase" data-date="2026-11-25">
+
+    <div class="check"></div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Miércoles 25 de noviembre
+        </div>
+
+        <div class="tema">
+            Homologación del concurso
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- SEGUNDO PARCIAL -->
+
+<div class="clase parcial" data-date="2026-11-27">
+
+    <div class="check">
+        📝
+    </div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 27 de noviembre — SEGUNDO PARCIAL
+        </div>
+
+        <div class="tema">
+            PRESENCIAL
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+
+<!-- ========================================================
+     DICIEMBRE
+     ======================================================== -->
+
+<section class="mes">
+
+<h2>DICIEMBRE</h2>
+
+
+<div class="clase recuperatorio" data-date="2026-12-04">
+
+    <div class="check">
+        🏁
+    </div>
+
+    <div class="contenido">
+
+        <div class="fecha">
+            Viernes 4 de diciembre
+        </div>
+
+        <div class="tema">
+            PRESENCIAL — Recuperatorio segundo parcial (ORAL) — FINAL (ORAL)
+        </div>
+
+    </div>
+
+</div>
+
+</section>
+
+
+</div>
+
+
+
+<!-- ========================================================
+     PIE DE PÁGINA
+     ======================================================== -->
+
+<footer>
+
+    <div class="aclaracion">
+
+        Esta página fue desarrollada por iniciativa de los estudiantes
+        con fines exclusivamente de organización del estudio de la cátedra
+        de acuerdo al cronograma de la misma.
+        No es una página oficial.
+
+    </div>
+
+    <div class="copyright">
+
+        © 2026 - Desarrollado por derechox.
+
+    </div>
+
+</footer>
+
+
+
+<script>
+
+/* ==========================================================
+   MARCAR CLASES QUE YA PASARON
+   ========================================================== */
+
+function actualizarClases() {
+
+    const ahora = new Date();
+
+    const clases =
+        document.querySelectorAll(".clase[data-date]");
+
+
+    clases.forEach(clase => {
+
+        const fechaClase = new Date(
+            clase.getAttribute("data-date") + "T23:59:59"
+        );
+
+        const check =
+            clase.querySelector(".check");
+
+
+        /*
+        Si la fecha de la clase ya pasó,
+        ponemos la tilde verde.
+        */
+
+        if (
+            ahora > fechaClase &&
+            !clase.classList.contains("parcial") &&
+            !clase.classList.contains("recuperatorio")
+        ) {
+
+            check.textContent = "✓";
+
+            clase.classList.add("realizada");
+
+        }
+
+    });
+
+}
+
+
+/* ==========================================================
+   CONTADOR DEL PRIMER PARCIAL
+   ========================================================== */
+
+const fechaParcial =
+    new Date("2026-10-13T20:00:00");
+
+
+function actualizarContador() {
+
+    const ahora = new Date();
+
+    const diferencia =
+        fechaParcial - ahora;
+
+    const contador =
+        document.getElementById("countdown");
+
+
+    /* PARCIAL YA COMENZÓ */
+
+    if (diferencia <= 0) {
+
+        contador.textContent =
+            "¡El primer parcial es hoy!";
+
+        return;
+    }
+
+
+    /* CÁLCULO */
+
+    const dias =
+        Math.floor(
+            diferencia /
+            (1000 * 60 * 60 * 24)
+        );
+
+
+    const horas =
+        Math.floor(
+            (diferencia /
+            (1000 * 60 * 60)) % 24
+        );
+
+
+    const minutos =
+        Math.floor(
+            (diferencia /
+            (1000 * 60)) % 60
+        );
+
+
+    const segundos =
+        Math.floor(
+            (diferencia / 1000) % 60
+        );
+
+
+    /* MOSTRAR */
+
+    contador.textContent =
+        dias + " días · " +
+        horas + " h · " +
+        minutos + " min · " +
+        segundos + " seg";
+
+}
+
+
+/* ==========================================================
+   INICIAR
+   ========================================================== */
+
+actualizarClases();
+
+actualizarContador();
+
+
+/*
+   Actualiza el contador cada segundo.
+*/
+
+setInterval(
+    actualizarContador,
+    1000
+);
+
+
+/*
+   Actualiza las clases cada minuto.
+*/
+
+setInterval(
+    actualizarClases,
+    60000
+);
+
+</script>
+
+
+</body>
+</html>
+```
