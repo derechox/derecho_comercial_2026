@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -27,10 +26,8 @@ html {
 body {
     margin: 0;
     font-family: Arial, Helvetica, sans-serif;
-
     background: #000;
     color: #e5e7eb;
-
     min-height: 100vh;
 }
 
@@ -42,33 +39,24 @@ body {
 header {
 
     background: #000;
-
     color: white;
-
     padding: 28px 18px 24px;
-
     text-align: center;
-
     border-bottom: 1px solid #222;
 }
 
 header h1 {
 
     margin: 0;
-
     font-size: 26px;
-
     line-height: 1.25;
 }
 
 header p {
 
     margin: 8px 0 0;
-
     color: #a1a1aa;
-
     font-size: 14px;
-
     line-height: 1.5;
 }
 
@@ -80,11 +68,8 @@ header p {
 .container {
 
     width: 100%;
-
     max-width: 900px;
-
     margin: auto;
-
     padding: 18px;
 }
 
@@ -96,48 +81,34 @@ header p {
 .contador {
 
     background: #0b0b0b;
-
     border: 1px solid #262626;
-
     border-radius: 14px;
-
     padding: 23px 18px;
-
     margin-bottom: 20px;
-
     text-align: center;
-
     box-shadow: 0 4px 18px rgba(0,0,0,0.5);
 }
 
 .contador h2 {
 
     margin: 0 0 14px;
-
     font-size: 21px;
-
     color: #f5f5f5;
 }
 
 #countdown {
 
     font-size: 27px;
-
     font-weight: bold;
-
     color: #ef4444;
-
     letter-spacing: 0.3px;
 }
 
 .parcial-info {
 
     margin-top: 11px;
-
     font-size: 14px;
-
     color: #a1a1aa;
-
     line-height: 1.5;
 }
 
@@ -149,26 +120,18 @@ header p {
 .info {
 
     background: #0b0b0b;
-
     border: 1px solid #262626;
-
     padding: 17px;
-
     border-radius: 12px;
-
     margin-bottom: 25px;
-
     box-shadow: 0 3px 14px rgba(0,0,0,0.45);
 }
 
 .info p {
 
     margin: 7px 0;
-
     font-size: 14px;
-
     line-height: 1.5;
-
     color: #d4d4d8;
 }
 
@@ -190,17 +153,11 @@ header p {
 .mes h2 {
 
     background: #171717;
-
     color: #fff;
-
     padding: 12px 15px;
-
     border-radius: 9px;
-
     font-size: 18px;
-
     margin: 0 0 10px;
-
     border-left: 4px solid #404040;
 }
 
@@ -212,17 +169,12 @@ header p {
 .clase {
 
     background: #0b0b0b;
-
     border: 1px solid #242424;
-
     border-radius: 10px;
-
     padding: 14px 15px;
-
     margin-bottom: 8px;
 
     display: flex;
-
     align-items: flex-start;
 
     gap: 11px;
@@ -247,7 +199,6 @@ header p {
     font-size: 20px;
 
     min-width: 25px;
-
     width: 25px;
 
     font-weight: bold;
@@ -261,7 +212,7 @@ header p {
 
 
 /* =========================================================
-   CONTENIDO DE CLASE
+   CONTENIDO
    ========================================================= */
 
 .contenido {
@@ -289,6 +240,42 @@ header p {
     line-height: 1.45;
 
     font-size: 14px;
+}
+
+
+/* =========================================================
+   AUDIO
+   ========================================================= */
+
+.audio {
+
+    margin-left: auto;
+
+    min-width: 34px;
+
+    width: 34px;
+
+    text-align: center;
+}
+
+.audio a {
+
+    text-decoration: none;
+
+    font-size: 22px;
+
+    color: #22c55e;
+
+    display: inline-block;
+
+    transition: 0.2s;
+}
+
+.audio a:hover {
+
+    transform: scale(1.15);
+
+    color: white;
 }
 
 
@@ -474,6 +461,18 @@ footer .copyright {
         font-size: 13px;
     }
 
+    .audio {
+
+        min-width: 30px;
+
+        width: 30px;
+    }
+
+    .audio a {
+
+        font-size: 20px;
+    }
+
 }
 
 
@@ -534,7 +533,7 @@ footer .copyright {
 
 
 <!-- ========================================================
-     CONTADOR DEL PRIMER PARCIAL
+     ⏳ CONTADOR
      ======================================================== -->
 
 <div class="contador">
@@ -547,8 +546,8 @@ footer .copyright {
         Cargando...
     </div>
 
-    <div class="parcial-info">
-        Martes 13 de octubre de 2026 · 20:00 hs · PRESENCIAL
+    <div class="parcial-info" id="parcialInfo">
+        Cargando fecha...
     </div>
 
 </div>
@@ -591,985 +590,438 @@ footer .copyright {
 
 
 <!-- ========================================================
-     AGOSTO
+     ========================================================
+     ✏️✏️✏️ ZONA EDITABLE
+     ========================================================
+     ========================================================
+
+     ACÁ SOLAMENTE TENÉS QUE MODIFICAR:
+
+     📅 FECHAS
+     📚 TEMAS
+     🎧 LINKS DE GOOGLE DRIVE
+     📝 FECHAS DE PARCIALES
+
+     Si no tenés audio:
+
+     audio: ""
+
+     Si tenés audio:
+
+     audio: "https://drive.google.com/..."
+
      ======================================================== -->
 
-<section class="mes">
 
-<h2>AGOSTO</h2>
+<script>
 
 
-<div class="clase" data-date="2026-08-12">
+/* =========================================================
+   📝 FECHAS DE LOS PARCIALES
+   =========================================================
 
-    <div class="check"></div>
+   IMPORTANTE:
 
-    <div class="contenido">
+   Si la facultad cambia la fecha del parcial,
+   solamente modificá estas fechas.
 
-        <div class="fecha">
-            Miércoles 12 de agosto
-        </div>
+   Formato:
 
-        <div class="tema">
-            Presentación de la materia - Evolución del derecho comercial
-        </div>
+   "AAAA-MM-DDTHH:MM:SS"
 
-    </div>
+   ========================================================= */
 
-</div>
+const FECHA_PRIMER_PARCIAL =
+    "2026-10-13T20:00:00";
 
+const FECHA_SEGUNDO_PARCIAL =
+    "2026-11-27T20:00:00";
 
-<div class="clase" data-date="2026-08-14">
 
-    <div class="check"></div>
+/* =========================================================
+   📚 CRONOGRAMA
+   =========================================================
 
-    <div class="contenido">
+   Cada clase tiene:
 
-        <div class="fecha">
-            Viernes 14 de agosto
-        </div>
+   fecha
+   tema
+   audio
 
-        <div class="tema">
-            Elementos del derecho comercial incorporados al CCCN
-        </div>
+   Ejemplo SIN AUDIO:
 
-    </div>
+   {
+       fecha: "2026-08-12",
+       tema: "Tema de la clase",
+       audio: ""
+   }
 
-</div>
+   Ejemplo CON AUDIO:
 
+   {
+       fecha: "2026-08-12",
+       tema: "Tema de la clase",
+       audio: "https://drive.google.com/..."
+   }
 
-<div class="clase" data-date="2026-08-18">
+   ========================================================= */
 
-    <div class="check"></div>
+const CLASES = [
 
-    <div class="contenido">
 
-        <div class="fecha">
-            Martes 18 de agosto
-        </div>
+/* =========================================================
+   AGOSTO
+   ========================================================= */
 
-        <div class="tema">
-            Persona jurídica CCCN
-        </div>
+{
+    fecha: "2026-08-12",
+    tema: "Presentación de la materia - Evolución del derecho comercial",
+    audio: "https://drive.google.com/file/d/1x4TGqOvEQO5-YJlWmLKTkQrGJxzcfJSE/view?usp=drive_link"
+},
 
-    </div>
+{
+    fecha: "2026-08-14",
+    tema: "Elementos del derecho comercial incorporados al CCCN",
+    audio: "https://drive.google.com/file/d/1X4KWcMWZLd5L-A1-q8-Tqd9x5QPFcAXa/view?usp=drive_link"
+},
 
-</div>
+{
+    fecha: "2026-08-18",
+    tema: "Persona jurídica CCCN",
+    audio: "https://drive.google.com/file/d/1HE6LW9nj0pVkkdK5CucxEoIr5Ywx7ous/view?usp=drive_link"
+},
+
+{
+    fecha: "2026-08-19",
+    tema: "Inoponibilidad de la persona jurídica",
+    audio: ""
+},
+
+{
+    fecha: "2026-08-21",
+    tema: "Trabajo práctico N.º 1 — Análisis de la película La Lavandería",
+    audio: ""
+},
 
+{
+    fecha: "2026-08-25",
+    tema: "Introducción a las sociedades — Concepto — Características",
+    audio: ""
+},
 
-<div class="clase" data-date="2026-08-19">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 19 de agosto
-        </div>
-
-        <div class="tema">
-            Inoponibilidad de la persona jurídica
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-08-21">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 21 de agosto
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 1 — Análisis de la película La Lavandería
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-08-25">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 25 de agosto
-        </div>
-
-        <div class="tema">
-            Introducción a las sociedades — Concepto — Características
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-08-26">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 26 de agosto
-        </div>
-
-        <div class="tema">
-            Sociedades — Elementos — Objeto social — Affectio societatis — Ley 19.550
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-08-28">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 28 de agosto
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 2 — Análisis de la película Wall Street
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
+{
+    fecha: "2026-08-26",
+    tema: "Sociedades — Elementos — Objeto social — Affectio societatis — Ley 19.550",
+    audio: ""
+},
+
+{
+    fecha: "2026-08-28",
+    tema: "Trabajo práctico N.º 2 — Análisis de la película Wall Street",
+    audio: ""
+},
+
+
+
+/* =========================================================
+   SEPTIEMBRE
+   ========================================================= */
+
+{
+    fecha: "2026-09-01",
+    tema: "Contratos paritarios, de adhesión, de consumo",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-02",
+    tema: "Contratos paritarios, de adhesión, de consumo — continuación",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-04",
+    tema: "Trabajo práctico N.º 3 — Principales características contratos PAC",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-08",
+    tema: "Ley 24.240 — Ley de Defensa al Consumidor",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-09",
+    tema: "Contratos bancarios",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-11",
+    tema: "Trabajo práctico N.º 4 — Derechos del consumidor en Ley 24.240",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-15",
+    tema: "Contratos asociativos",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-16",
+    tema: "Ley 25.065 — Ley de Tarjeta de Crédito",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-18",
+    tema: "Trabajo práctico N.º 5 — Derechos del consumidor en C.B. y T.C.",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-22",
+    tema: "Ley de fondo de comercio 11.687",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-23",
+    tema: "Agencia, concesión y franquicia",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-25",
+    tema: "Trabajo práctico N.º 6 — Análisis fallo transferencia fondo comercio",
+    audio: ""
+},
+
+
+
+/* =========================================================
+   OCTUBRE
+   ========================================================= */
+
+{
+    fecha: "2026-09-29",
+    tema: "Derechos de propiedad intelectual — marcas, patentes, modelos",
+    audio: ""
+},
+
+{
+    fecha: "2026-09-30",
+    tema: "Ley de marcas 22.362",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-02",
+    tema: "Trabajo práctico N.º 7 — Cuadro de Derechos de propiedad intelectual",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-06",
+    tema: "Títulos valores — Características cambiarias",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-07",
+    tema: "Títulos valores en el CCCN",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-09",
+    tema: "Trabajo práctico N.º 8 — Títulos valores en el CCCN",
+    audio: ""
+},
+
+
+/* =========================================================
+   📝 PRIMER PARCIAL
+   ========================================================= */
+
+{
+    fecha: "2026-10-13",
+    tema: "PRIMER PARCIAL",
+    tipo: "parcial",
+    audio: ""
+},
+
+
+{
+    fecha: "2026-10-14",
+    tema: "Introducción a la segunda parte del curso — Sociedades – Concursos",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-16",
+    tema: "Entrega de notas, análisis y conclusiones de la primera parte del curso",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-20",
+    tema: "Sociedades — Elementos del contrato social",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-21",
+    tema: "Sociedades — Affectio societatis — Objeto social — Capacidad",
+    audio: ""
+},
+
+
+/* =========================================================
+   RECUPERATORIO
+   ========================================================= */
+
+{
+    fecha: "2026-10-23",
+    tema: "Recuperatorio del primer examen parcial",
+    tipo: "recuperatorio",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-27",
+    tema: "Sociedades — Intervención Judicial",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-28",
+    tema: "Sociedades — Contabilidad — Estados contables",
+    audio: ""
+},
+
+{
+    fecha: "2026-10-30",
+    tema: "Trabajo práctico N.º 9 — Affectio societatis",
+    audio: ""
+},
+
+
+
+/* =========================================================
+   NOVIEMBRE
+   ========================================================= */
+
+{
+    fecha: "2026-11-03",
+    tema: "Sociedades — Sociedades Extranjeras",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-04",
+    tema: "Sociedades — Sociedad Responsabilidad Limitada, características",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-06",
+    tema: "Trabajo práctico N.º 10 — Análisis contrato social S.R.L.",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-10",
+    tema: "Sociedades — Sociedad anónima, características",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-11",
+    tema: "Sociedades — Órganos: directorio, asamblea, fiscalización",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-13",
+    tema: "Trabajo práctico N.º 11 — Análisis estatuto social S.A.",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-17",
+    tema: "Concursos — Requisitos — Apertura",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-18",
+    tema: "Concursos — Efectos del concurso",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-20",
+    tema: "Trabajo práctico N.º 12 — Análisis concurso Página PJN",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-24",
+    tema: "Concursos — Proceso de verificación de créditos",
+    audio: ""
+},
+
+{
+    fecha: "2026-11-25",
+    tema: "Homologación del concurso",
+    audio: ""
+},
+
+
+/* =========================================================
+   📝 SEGUNDO PARCIAL
+   ========================================================= */
+
+{
+    fecha: "2026-11-27",
+    tema: "SEGUNDO PARCIAL",
+    tipo: "parcial",
+    audio: ""
+},
+
+
+
+/* =========================================================
+   DICIEMBRE
+   ========================================================= */
+
+{
+    fecha: "2026-12-04",
+    tema: "PRESENCIAL — Recuperatorio segundo parcial (ORAL) — FINAL (ORAL)",
+    tipo: "recuperatorio",
+    audio: ""
+}
+
+];
+
+
+/* =========================================================
+   ⚙️ FIN DE LA ZONA EDITABLE
+   ========================================================= */
+
+
+</script>
 
 
 <!-- ========================================================
-     SEPTIEMBRE
+     CRONOGRAMA
      ======================================================== -->
 
-<section class="mes">
+<div id="cronograma"></div>
 
-<h2>SEPTIEMBRE</h2>
-
-
-<div class="clase" data-date="2026-09-01">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 1 de septiembre
-        </div>
-
-        <div class="tema">
-            Contratos paritarios, de adhesión, de consumo
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-02">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 2 de septiembre
-        </div>
-
-        <div class="tema">
-            Contratos paritarios, de adhesión, de consumo — continuación
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-04">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 4 de septiembre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 3 — Principales características contratos PAC
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-08">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 8 de septiembre
-        </div>
-
-        <div class="tema">
-            Ley 24.240 — Ley de Defensa al Consumidor
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-09">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 9 de septiembre
-        </div>
-
-        <div class="tema">
-            Contratos bancarios
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-11">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 11 de septiembre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 4 — Derechos del consumidor en Ley 24.240
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-15">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 15 de septiembre
-        </div>
-
-        <div class="tema">
-            Contratos asociativos
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-16">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 16 de septiembre
-        </div>
-
-        <div class="tema">
-            Ley 25.065 — Ley de Tarjeta de Crédito
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-18">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 18 de septiembre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 5 — Derechos del consumidor en C.B. y T.C.
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-22">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 22 de septiembre
-        </div>
-
-        <div class="tema">
-            Ley de fondo de comercio 11.687
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-23">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 23 de septiembre
-        </div>
-
-        <div class="tema">
-            Agencia, concesión y franquicia
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-25">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 25 de septiembre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 6 — Análisis fallo transferencia fondo comercio
-        </div>
-
-    </div>
-
-</div>
-
-
-</section>
-
-
-
-<!-- ========================================================
-     OCTUBRE
-     ======================================================== -->
-
-<section class="mes">
-
-<h2>OCTUBRE</h2>
-
-
-<div class="clase" data-date="2026-09-29">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 29 de septiembre
-        </div>
-
-        <div class="tema">
-            Derechos de propiedad intelectual — marcas, patentes, modelos
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-09-30">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 30 de septiembre
-        </div>
-
-        <div class="tema">
-            Ley de marcas 22.362
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-02">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 2 de octubre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 7 — Cuadro de Derechos de propiedad intelectual
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-06">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 6 de octubre
-        </div>
-
-        <div class="tema">
-            Títulos valores — Características cambiarias
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-07">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 7 de octubre
-        </div>
-
-        <div class="tema">
-            Títulos valores en el CCCN
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-09">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 9 de octubre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 8 — Títulos valores en el CCCN
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- PRIMER PARCIAL -->
-
-<div class="clase parcial" data-date="2026-10-13">
-
-    <div class="check">
-        📝
-    </div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 13 de octubre — PRIMER PARCIAL
-        </div>
-
-        <div class="tema">
-            PRESENCIAL
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-14">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 14 de octubre
-        </div>
-
-        <div class="tema">
-            Introducción a la segunda parte del curso — Sociedades – Concursos
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-16">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 16 de octubre
-        </div>
-
-        <div class="tema">
-            Entrega de notas, análisis y conclusiones de la primera parte del curso
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-20">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 20 de octubre
-        </div>
-
-        <div class="tema">
-            Sociedades — Elementos del contrato social
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-21">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 21 de octubre
-        </div>
-
-        <div class="tema">
-            Sociedades — Affectio societatis — Objeto social — Capacidad
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- RECUPERATORIO -->
-
-<div class="clase recuperatorio" data-date="2026-10-23">
-
-    <div class="check">
-        ↩️
-    </div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 23 de octubre — Recuperatorio del primer examen parcial
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-27">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 27 de octubre
-        </div>
-
-        <div class="tema">
-            Sociedades — Intervención Judicial
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-28">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 28 de octubre
-        </div>
-
-        <div class="tema">
-            Sociedades — Contabilidad — Estados contables
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-10-30">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 30 de octubre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 9 — Affectio societatis
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ========================================================
-     NOVIEMBRE
-     ======================================================== -->
-
-<section class="mes">
-
-<h2>NOVIEMBRE</h2>
-
-
-<div class="clase" data-date="2026-11-03">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 3 de noviembre
-        </div>
-
-        <div class="tema">
-            Sociedades — Sociedades Extranjeras
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-04">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 4 de noviembre
-        </div>
-
-        <div class="tema">
-            Sociedades — Sociedad Responsabilidad Limitada, características
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-06">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 6 de noviembre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 10 — Análisis contrato social S.R.L.
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-10">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 10 de noviembre
-        </div>
-
-        <div class="tema">
-            Sociedades — Sociedad anónima, características
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-11">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 11 de noviembre
-        </div>
-
-        <div class="tema">
-            Sociedades — Órganos: directorio, asamblea, fiscalización
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-13">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 13 de noviembre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 11 — Análisis estatuto social S.A.
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-17">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 17 de noviembre
-        </div>
-
-        <div class="tema">
-            Concursos — Requisitos — Apertura
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-18">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 18 de noviembre
-        </div>
-
-        <div class="tema">
-            Concursos — Efectos del concurso
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-20">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 20 de noviembre
-        </div>
-
-        <div class="tema">
-            Trabajo práctico N.º 12 — Análisis concurso Página PJN
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-24">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Martes 24 de noviembre
-        </div>
-
-        <div class="tema">
-            Concursos — Proceso de verificación de créditos
-        </div>
-
-    </div>
-
-</div>
-
-
-<div class="clase" data-date="2026-11-25">
-
-    <div class="check"></div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Miércoles 25 de noviembre
-        </div>
-
-        <div class="tema">
-            Homologación del concurso
-        </div>
-
-    </div>
-
-</div>
-
-
-<!-- SEGUNDO PARCIAL -->
-
-<div class="clase parcial" data-date="2026-11-27">
-
-    <div class="check">
-        📝
-    </div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 27 de noviembre — SEGUNDO PARCIAL
-        </div>
-
-        <div class="tema">
-            PRESENCIAL
-        </div>
-
-    </div>
-
-</div>
-
-</section>
-
-
-
-<!-- ========================================================
-     DICIEMBRE
-     ======================================================== -->
-
-<section class="mes">
-
-<h2>DICIEMBRE</h2>
-
-
-<div class="clase recuperatorio" data-date="2026-12-04">
-
-    <div class="check">
-        🏁
-    </div>
-
-    <div class="contenido">
-
-        <div class="fecha">
-            Viernes 4 de diciembre
-        </div>
-
-        <div class="tema">
-            PRESENCIAL — Recuperatorio segundo parcial (ORAL) — FINAL (ORAL)
-        </div>
-
-    </div>
-
-</div>
-
-</section>
 
 
 </div>
@@ -1603,42 +1055,390 @@ footer .copyright {
 
 <script>
 
-/* ==========================================================
+
+/* =========================================================
+   FUNCIONES DE FECHA
+   ========================================================= */
+
+function crearFecha(fechaTexto) {
+
+    return new Date(
+        fechaTexto + "T23:59:59"
+    );
+
+}
+
+
+function formatearFecha(fechaTexto) {
+
+    const partes =
+        fechaTexto.split("-");
+
+    const fecha =
+        new Date(
+            Number(partes[0]),
+            Number(partes[1]) - 1,
+            Number(partes[2])
+        );
+
+    const dias = [
+        "Domingo",
+        "Lunes",
+        "Martes",
+        "Miércoles",
+        "Jueves",
+        "Viernes",
+        "Sábado"
+    ];
+
+    const meses = [
+        "enero",
+        "febrero",
+        "marzo",
+        "abril",
+        "mayo",
+        "junio",
+        "julio",
+        "agosto",
+        "septiembre",
+        "octubre",
+        "noviembre",
+        "diciembre"
+    ];
+
+    return (
+        dias[fecha.getDay()]
+        + " "
+        + fecha.getDate()
+        + " de "
+        + meses[fecha.getMonth()]
+    );
+
+}
+
+
+function obtenerMes(fechaTexto) {
+
+    const partes =
+        fechaTexto.split("-");
+
+    const fecha =
+        new Date(
+            Number(partes[0]),
+            Number(partes[1]) - 1,
+            Number(partes[2])
+        );
+
+    const meses = [
+        "ENERO",
+        "FEBRERO",
+        "MARZO",
+        "ABRIL",
+        "MAYO",
+        "JUNIO",
+        "JULIO",
+        "AGOSTO",
+        "SEPTIEMBRE",
+        "OCTUBRE",
+        "NOVIEMBRE",
+        "DICIEMBRE"
+    ];
+
+    return meses[fecha.getMonth()];
+
+}
+
+
+/* =========================================================
+   CREAR CRONOGRAMA
+   ========================================================= */
+
+function crearCronograma() {
+
+    const contenedor =
+        document.getElementById("cronograma");
+
+    contenedor.innerHTML = "";
+
+    let mesActual = "";
+
+
+    CLASES.forEach(clase => {
+
+
+        const mes =
+            obtenerMes(clase.fecha);
+
+
+        /* CREAR MES */
+
+        if (mes !== mesActual) {
+
+            mesActual = mes;
+
+
+            const seccion =
+                document.createElement("section");
+
+            seccion.className = "mes";
+
+
+            const titulo =
+                document.createElement("h2");
+
+            titulo.textContent = mes;
+
+
+            seccion.appendChild(titulo);
+
+
+            const lista =
+                document.createElement("div");
+
+            lista.className = "lista-mes";
+
+
+            seccion.appendChild(lista);
+
+
+            contenedor.appendChild(seccion);
+
+        }
+
+
+        const secciones =
+            contenedor.querySelectorAll(".mes");
+
+        const seccionActual =
+            secciones[secciones.length - 1];
+
+
+        const lista =
+            seccionActual.querySelector(".lista-mes");
+
+
+        /* CREAR TARJETA */
+
+        const tarjeta =
+            document.createElement("div");
+
+        tarjeta.className = "clase";
+
+        tarjeta.setAttribute(
+            "data-date",
+            clase.fecha
+        );
+
+
+        /* TIPO DE CLASE */
+
+        if (clase.tipo === "parcial") {
+
+            tarjeta.classList.add("parcial");
+
+        }
+
+        if (clase.tipo === "recuperatorio") {
+
+            tarjeta.classList.add("recuperatorio");
+
+        }
+
+
+        /* =================================================
+           TILDE
+           ================================================= */
+
+        const check =
+            document.createElement("div");
+
+        check.className = "check";
+
+
+        if (clase.tipo === "parcial") {
+
+            check.textContent = "📝";
+
+        }
+
+        else if (clase.tipo === "recuperatorio") {
+
+            check.textContent = "↩️";
+
+        }
+
+
+        tarjeta.appendChild(check);
+
+
+        /* =================================================
+           CONTENIDO
+           ================================================= */
+
+        const contenido =
+            document.createElement("div");
+
+        contenido.className = "contenido";
+
+
+        const fecha =
+            document.createElement("div");
+
+        fecha.className = "fecha";
+
+        fecha.textContent =
+            formatearFecha(clase.fecha);
+
+
+        if (clase.tipo === "parcial") {
+
+            fecha.textContent +=
+                " — " + clase.tema;
+
+        }
+
+
+        contenido.appendChild(fecha);
+
+
+        /* TEMA */
+
+        if (clase.tipo !== "parcial") {
+
+            const tema =
+                document.createElement("div");
+
+            tema.className = "tema";
+
+            tema.textContent =
+                clase.tema;
+
+            contenido.appendChild(tema);
+
+        }
+
+
+        tarjeta.appendChild(contenido);
+
+
+        /* =================================================
+           🎧 AUDIO
+           ================================================= */
+
+        /*
+           Si audio está vacío:
+
+           audio: ""
+
+           NO aparece absolutamente nada.
+
+           Si tiene un link:
+
+           audio: "https://drive.google.com/..."
+
+           aparece el auricular a la derecha.
+        */
+
+        if (
+            clase.audio &&
+            clase.audio.trim() !== ""
+        ) {
+
+            const audio =
+                document.createElement("div");
+
+            audio.className = "audio";
+
+
+            const enlace =
+                document.createElement("a");
+
+            enlace.href =
+                clase.audio;
+
+            enlace.target = "_blank";
+
+            enlace.rel =
+                "noopener noreferrer";
+
+            enlace.title =
+                "Escuchar grabación";
+
+
+            enlace.textContent =
+                "🎧";
+
+
+            audio.appendChild(enlace);
+
+            tarjeta.appendChild(audio);
+
+        }
+
+
+        /* =================================================
+           AGREGAR TARJETA
+           ================================================= */
+
+        lista.appendChild(tarjeta);
+
+    });
+
+
+    actualizarClases();
+
+}
+
+
+/* =========================================================
    MARCAR CLASES QUE YA PASARON
-   ========================================================== */
+   ========================================================= */
 
 function actualizarClases() {
 
-    const ahora = new Date();
+    const ahora =
+        new Date();
+
 
     const clases =
-        document.querySelectorAll(".clase[data-date]");
+        document.querySelectorAll(
+            ".clase[data-date]"
+        );
 
 
     clases.forEach(clase => {
 
-        const fechaClase = new Date(
-            clase.getAttribute("data-date") + "T23:59:59"
-        );
+
+        const fechaClase =
+            new Date(
+                clase.getAttribute("data-date")
+                + "T23:59:59"
+            );
+
 
         const check =
             clase.querySelector(".check");
 
 
         /*
-        Si la fecha de la clase ya pasó,
-        ponemos la tilde verde.
+           Parciales y recuperatorios
+           mantienen sus símbolos.
         */
 
         if (
-            ahora > fechaClase &&
-            !clase.classList.contains("parcial") &&
+            ahora > fechaClase
+            &&
+            !clase.classList.contains("parcial")
+            &&
             !clase.classList.contains("recuperatorio")
         ) {
 
-            check.textContent = "✓";
+            check.textContent =
+                "✓";
 
-            clase.classList.add("realizada");
+            clase.classList.add(
+                "realizada"
+            );
 
         }
 
@@ -1647,23 +1447,30 @@ function actualizarClases() {
 }
 
 
-/* ==========================================================
+/* =========================================================
    CONTADOR DEL PRIMER PARCIAL
-   ========================================================== */
-
-const fechaParcial =
-    new Date("2026-10-13T20:00:00");
-
+   ========================================================= */
 
 function actualizarContador() {
 
-    const ahora = new Date();
+    const fechaParcial =
+        new Date(
+            FECHA_PRIMER_PARCIAL
+        );
+
+
+    const ahora =
+        new Date();
+
 
     const diferencia =
         fechaParcial - ahora;
 
+
     const contador =
-        document.getElementById("countdown");
+        document.getElementById(
+            "countdown"
+        );
 
 
     /* PARCIAL YA COMENZÓ */
@@ -1674,6 +1481,7 @@ function actualizarContador() {
             "¡El primer parcial es hoy!";
 
         return;
+
     }
 
 
@@ -1709,26 +1517,85 @@ function actualizarContador() {
     /* MOSTRAR */
 
     contador.textContent =
-        dias + " días · " +
-        horas + " h · " +
-        minutos + " min · " +
+        dias + " días · "
+        +
+        horas + " h · "
+        +
+        minutos + " min · "
+        +
         segundos + " seg";
 
 }
 
 
-/* ==========================================================
-   INICIAR
-   ========================================================== */
+/* =========================================================
+   MOSTRAR FECHA DEL PRIMER PARCIAL
+   ========================================================= */
 
-actualizarClases();
+function mostrarFechaParcial() {
+
+    const info =
+        document.getElementById(
+            "parcialInfo"
+        );
+
+
+    const fecha =
+        new Date(
+            FECHA_PRIMER_PARCIAL
+        );
+
+
+    const opciones = {
+
+        weekday: "long",
+
+        day: "numeric",
+
+        month: "long",
+
+        year: "numeric",
+
+        hour: "2-digit",
+
+        minute: "2-digit"
+
+    };
+
+
+    let texto =
+        fecha.toLocaleDateString(
+            "es-AR",
+            opciones
+        );
+
+
+    texto =
+        texto.charAt(0).toUpperCase()
+        +
+        texto.slice(1);
+
+
+    info.textContent =
+        texto + " hs · PRESENCIAL";
+
+}
+
+
+/* =========================================================
+   INICIAR
+   ========================================================= */
+
+crearCronograma();
 
 actualizarContador();
 
+mostrarFechaParcial();
 
-/*
-   Actualiza el contador cada segundo.
-*/
+
+/* =========================================================
+   ACTUALIZAR CONTADOR CADA SEGUNDO
+   ========================================================= */
 
 setInterval(
     actualizarContador,
@@ -1736,18 +1603,18 @@ setInterval(
 );
 
 
-/*
-   Actualiza las clases cada minuto.
-*/
+/* =========================================================
+   ACTUALIZAR CLASES CADA MINUTO
+   ========================================================= */
 
 setInterval(
     actualizarClases,
     60000
 );
 
+
 </script>
 
 
 </body>
 </html>
-```
